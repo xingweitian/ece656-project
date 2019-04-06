@@ -16,8 +16,12 @@ def check_server():
             _url = "http://" + _url
         if not _url.endswith("/"):
             _url = _url + "/"
+            os.environ["server_url"] = _url
         full_url = urljoin(_url, "ping")
-        req = base_request.get(full_url)
-        if req.status_code == 200:
-            return True
+        try:
+            req = base_request.get(full_url)
+            if req.status_code == 200:
+                return True
+        except:
+            return False
     return False

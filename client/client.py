@@ -3,6 +3,7 @@
 # @FileName: client.py
 from .tools.check import check_server
 from .tools.welcome import welcome_ascii_art
+from .tools.commands import commands
 
 
 def run_client():
@@ -11,3 +12,4 @@ def run_client():
         print("Please run server first. You can find tutorial in the manual.")
         exit(-1)
     welcome_ascii_art()
+    commands()
