@@ -9,7 +9,7 @@ from .tools.commands import commands
 def run_client():
     server_status = check_server()
     if not server_status:
-        print("Please run server first. You can find tutorial in the manual.")
+        print("Please run server first. You can find tutorial in the README.md.")
         exit(-1)
     welcome_ascii_art()
     commands()

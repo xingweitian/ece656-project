@@ -5,8 +5,12 @@
 from flask import Blueprint, jsonify
 
 from ..app import app
+from ..config import DB_CONFIG_PATH
+from ..db.db_util import connect_with_db
 
 data_blueprint = Blueprint('data', __name__)
+
+db_connection = connect_with_db(DB_CONFIG_PATH)
 
 
 @app.route("/clean")

@@ -4,6 +4,7 @@
 
 
 import argparse
+import os
 
 from client.client import run_client
 from server.server import run_server
@@ -17,6 +18,8 @@ args = parser.parse_args()
 
 if args.server:
     host, port = args.server.split(":")
+    os.environ["ECE656_PROJECT_SERVER_HOST"] = host
+    os.environ["ECE656_PROJECT_SERVER_PORT"] = port
     run_server(host, port)
 
 if args.client:
