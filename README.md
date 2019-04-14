@@ -4,7 +4,7 @@
 
 Name | Student ID | Email
 --- | --- | ---
-Boyun Zhang | TBA | boyun.zhang@uwaterloo.ca
+Boyun Zhang | 20754791 | boyun.zhang@uwaterloo.ca
 Weitian Xing | 20757406 | weitian.xing@uwaterloo.ca
 
 ## Project Information
