@@ -31,7 +31,7 @@ def exit():
     sys.exit(0)
 
 
-def switch(command):
+def switch(command: str):
     swithcer = {
         "1": data_clean,
         "2": data_analysis,

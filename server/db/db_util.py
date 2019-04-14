@@ -7,7 +7,7 @@ import json
 import pymysql.cursors
 
 
-def connect_with_db(config_path):
+def connect_with_db(config_path: str):
     with open(config_path, "r") as f:
         _config = json.load(f)
     return pymysql.connect(host=_config["host"],
