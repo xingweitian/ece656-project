@@ -5,10 +5,14 @@ import os
 import sys
 
 from .base_request import get
+from urllib.parse import urljoin
 
 
 def data_clean():
-    return "TODO"
+    server_url = os.environ.get("server_url")
+    print(get(urljoin(server_url, "data/dirty")))
+    user_choice = input("Please type the numbers that you choose, e.g., 1 2 3: ")
+    print(get(urljoin(server_url, "data/clean"), ))
 
 
 def data_analysis():
