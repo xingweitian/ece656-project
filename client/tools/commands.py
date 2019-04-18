@@ -5,10 +5,14 @@ import os
 import sys
 
 from .base_request import get
+from urllib.parse import urljoin
 
 
 def data_clean():
-    return "TODO"
+    server_url = os.environ.get("server_url")
+    print(get(urljoin(server_url, "data/dirty")).text)
+    user_choice = input("Please type the numbers that you choose, e.g., 1 2 3: ")
+    print(get(urljoin(server_url, "data/clean"), **{"user_choice": user_choice}).text)
 
 
 def data_analysis():
@@ -31,7 +35,7 @@ def exit():
     sys.exit(0)
 
 
-def switch(command):
+def switch(command: str):
     swithcer = {
         "1": data_clean,
         "2": data_analysis,

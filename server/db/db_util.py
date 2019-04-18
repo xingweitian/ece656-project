@@ -7,14 +7,15 @@ import json
 import pymysql.cursors
 
 
-def connect_with_db(config_path):
+def connect_with_db(config_path: str):
     with open(config_path, "r") as f:
         _config = json.load(f)
     return pymysql.connect(host=_config["host"],
                            port=_config["port"],
                            user=_config["user"],
                            password=_config["password"],
-                           charset='utf8mb4',
+                           charset="utf8mb4",
+                           db=_config["db"],
                            cursorclass=pymysql.cursors.DictCursor
                            )
 

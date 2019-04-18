@@ -4,10 +4,7 @@
 
 from flask import request
 
-from .data import data_blueprint
 from ..app import app
-
-app.register_blueprint(blueprint=data_blueprint, url_prefix="/data")
 
 
 @app.route("/ping")
@@ -16,9 +13,9 @@ def ping():
 
 
 def shutdown_server():
-    func = request.environ.get('werkzeug.server.shutdown')
+    func = request.environ.get("werkzeug.server.shutdown")
     if func is None:
-        raise RuntimeError('Not running with the Werkzeug Server')
+        raise RuntimeError("Not running with the Werkzeug Server")
     func()
 
 
@@ -26,3 +23,6 @@ def shutdown_server():
 def exit():
     shutdown_server()
     return "Server shutting down."
+
+
+from . import views
