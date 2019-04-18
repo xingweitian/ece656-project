@@ -9,7 +9,7 @@ Weitian Xing | 20757406 | weitian.xing@uwaterloo.ca
 
 ## Project Information
 
-Using **yelp** as the data set of our project, **Mysql** as the database.
+Using **lahman2016** as the data set of our project, **Mysql** as the database.
 
 ## Tutorial
 
@@ -29,7 +29,7 @@ Install all the requirements:
 python3 -m pip install -r requirements.txt
 ```
 
-Edit **db.json** (You can find it in ***project_folder/server/***, make sure you already had **yelp** in your Mysql):
+Edit **db.json** (You can find it in ***project_folder/server/***, make sure you already had **lahman2016** in your Mysql):
 
 ```json
 {
@@ -37,7 +37,7 @@ Edit **db.json** (You can find it in ***project_folder/server/***, make sure you
   "port": "your db port",
   "user": "user name",
   "password": "user password",
-  "db": "yelp"
+  "db": "lahman2016"
 }
 ```
 
