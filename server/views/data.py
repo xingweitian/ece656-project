@@ -4,7 +4,6 @@
 
 from flask import Blueprint, jsonify
 
-from ..app import app
 from ..config import DB_CONFIG_PATH
 from ..db.data_clean import print_dirty_data
 from ..db.db_util import connect_with_db
@@ -14,21 +13,21 @@ data_blueprint = Blueprint("data", __name__)
 db_connection = connect_with_db(DB_CONFIG_PATH)
 
 
-@app.route("/dirty")
+@data_blueprint.route("/dirty")
 def dirty():
     return print_dirty_data()
 
 
-@app.route("/clean")
+@data_blueprint.route("/clean")
 def clean():
     return jsonify("TODO")
 
 
-@app.route("/analyze")
+@data_blueprint.route("/analyze")
 def analyze():
     return jsonify("TODO")
 
 
-@app.route("/validate")
+@data_blueprint.route("/validate")
 def validate():
     return jsonify("TODO")

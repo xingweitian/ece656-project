@@ -12,7 +12,7 @@ def data_clean():
     server_url = os.environ.get("server_url")
     print(get(urljoin(server_url, "data/dirty")))
     user_choice = input("Please type the numbers that you choose, e.g., 1 2 3: ")
-    print(get(urljoin(server_url, "data/clean"), ))
+    print(get(urljoin(server_url, "data/clean"), user_choice=user_choice))
 
 
 def data_analysis():

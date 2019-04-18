@@ -4,10 +4,7 @@
 
 from flask import request
 
-from .data import data_blueprint
 from ..app import app
-
-app.register_blueprint(blueprint=data_blueprint, url_prefix="/data")
 
 
 @app.route("/ping")
@@ -26,3 +23,6 @@ def shutdown_server():
 def exit():
     shutdown_server()
     return "Server shutting down."
+
+
+from . import views
