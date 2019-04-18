@@ -2,10 +2,10 @@
 # @Author  : Weitian Xing
 # @FileName: data.py
 
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 
 from ..config import DB_CONFIG_PATH
-from ..db.data_clean import print_dirty_data
+from ..db.data_clean import print_dirty_data, data_clean
 from ..db.db_util import connect_with_db
 
 data_blueprint = Blueprint("data", __name__)
@@ -20,7 +20,10 @@ def dirty():
 
 @data_blueprint.route("/clean")
 def clean():
-    return jsonify("TODO")
+    user_choice = request.args.get("user_choice")
+    user_choice_list = user_choice.split()
+    data_clean(user_choice_list, db_connection)
+    return "Cleaning data complete."
 
 
 @data_blueprint.route("/analyze")

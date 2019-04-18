@@ -14,7 +14,8 @@ def connect_with_db(config_path: str):
                            port=_config["port"],
                            user=_config["user"],
                            password=_config["password"],
-                           charset='utf8mb4',
+                           charset="utf8mb4",
+                           db=_config["db"],
                            cursorclass=pymysql.cursors.DictCursor
                            )
 
