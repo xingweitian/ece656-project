@@ -6,6 +6,7 @@ from flask import Blueprint, jsonify, request
 
 from ..config import DB_CONFIG_PATH
 from ..db.data_clean import print_dirty_data, data_clean
+from ..db.data_revert import data_revert
 from ..db.db_util import connect_with_db
 
 data_blueprint = Blueprint("data", __name__)
@@ -28,9 +29,16 @@ def clean():
 
 @data_blueprint.route("/analyze")
 def analyze():
-    return jsonify("TODO")
+    return "TODO"
 
 
 @data_blueprint.route("/validate")
 def validate():
-    return jsonify("TODO")
+    return "TODO"
+
+
+@data_blueprint.route("/revert")
+def revert():
+    with db_connection.cursor() as cursor:
+        data_revert(cursor)
+    return "Data revert complete."
