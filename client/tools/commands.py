@@ -3,10 +3,9 @@
 # @FileName: commands.py
 import os
 import sys
-
-from .base_request import get
 from urllib.parse import urljoin
 
+from .base_request import get
 
 def data_clean():
     server_url = os.environ.get("server_url")
@@ -24,7 +23,9 @@ def analysis_validate():
 
 
 def data_revert():
-    return "TODO"
+    server_url = os.environ.get("server_url")
+    print("Waiting for complete, please be patient...")
+    print(get(urljoin(server_url, "data/revert")).text)
 
 
 def exit():
@@ -57,7 +58,7 @@ def commands():
     1. Clean Data
     2. Analysis Data
     3. Validate Analysis
-    4. Revert Data(Only After 1.)
+    4. Revert Data
     5. Exit
     
     Usage: type the number of the operation
