@@ -9,7 +9,9 @@ Weitian Xing | 20757406 | weitian.xing@uwaterloo.ca
 
 ## Project Information
 
-Using **lahman2016** as the data set of our project, **Mysql** as the database.
+- Using **lahman2016** as the data set of our project, **Mysql** as the database.
+- Using **flask** as the backend framework.
+- Using **decision tree** as the mining algorithm, analyze whether the rank of all star player will effect the player to enter hall of fame.
 
 ## Tutorial
 
