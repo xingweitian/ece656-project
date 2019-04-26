@@ -7,8 +7,7 @@ from flask import Blueprint, jsonify, request
 from ..config import DB_CONFIG_PATH
 from ..db.data_clean import print_dirty_data, data_clean
 from ..db.data_revert import data_revert
-from ..db.data_analysis import analysis
-from ..db.data_validate import validate
+from ..db.decision_tree import result_analysis, result_validate
 from ..db.db_util import connect_with_db
 
 data_blueprint = Blueprint("data", __name__)
@@ -31,14 +30,12 @@ def clean():
 
 @data_blueprint.route("/analyze")
 def analyze():
-    analysis()
-    return "TODO"
+    return "Please visit " + result_analysis() + " to see the results."
 
 
 @data_blueprint.route("/validate")
 def validate():
-    validate()
-    return "TODO"
+    return result_validate()
 
 
 @data_blueprint.route("/revert")

@@ -15,11 +15,15 @@ def data_clean():
 
 
 def data_analysis():
-    return "TODO"
+    server_url = os.environ.get("server_url")
+    print("Waiting for complete, please be patient...")
+    print(get(urljoin(server_url, "data/analyze")).text)
 
 
 def analysis_validate():
-    return "TODO"
+    server_url = os.environ.get("server_url")
+    print("Waiting for complete, please be patient...")
+    print(get(urljoin(server_url, "data/validate")).text)
 
 
 def data_revert():
